@@ -294,12 +294,7 @@ export default {
         reschedulingDate: ""
       },
 
-      documentTypes: [
-        { value: "CC", label: "Cédula de Ciudadanía" },
-        { value: "TI", label: "Tarjeta de Identidad" },
-        { value: "CE", label: "Cédula de Extranjería" },
-        { value: "PA", label: "Pasaporte" }
-      ],
+      documentTypes: [], // Ahora se cargará desde la API
 
       ordenMedicaPreview: null,
       autorizacionEpsPreview: null,
@@ -308,7 +303,20 @@ export default {
     };
   },
 
+  mounted() {
+    this.fetchDocumentTypes();
+  },
+
   methods: {
+    async fetchDocumentTypes() {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/patient/document-types");
+        this.documentTypes = response.data; // Guarda los datos en documentTypes
+      } catch (error) {
+        console.error("Error al cargar los tipos de documento:", error);
+      }
+    },
+
     async buscarPaciente() {
       if (!this.form.document) {
         alert('Por favor, ingrese el número de documento.');
@@ -432,6 +440,7 @@ export default {
   }
 };
 </script>
+
 
 <style scoped>
 .form-container {
