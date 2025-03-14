@@ -1,4 +1,3 @@
-
 <template>
   <header class="section-header">
     <div class="header-content">
@@ -85,11 +84,12 @@
                     <label>Departamento de <strong>residencia</strong>:<span class="text-success">*</span></label>
                     <select v-model="form.department" class="form-select border-primary" required>
                       <option value="">Seleccione</option>
-                      <option v-for="dep in department" :key="dep.value" :value="dep.value">
-                        {{ dep.label }}
+                      <option v-for="dep in departments" :key="dep.id" :value="dep.id">
+                        {{ dep.name }}
                       </option>
                     </select>
                   </div>
+
                   <div class="col-lg-3 col-sm-6 col-12 mb-3">
                     <label>Municipio de <strong>residencia</strong>:<span class="text-success">*</span></label>
                     <select v-model="form.municipality" class="form-select border-primary" required>
@@ -99,11 +99,11 @@
                       </option>
                     </select>
                   </div>
+
                   <div class="col-lg-6 col-sm-12 col-12 mb-3">
                     <label>Dirección de residencia:<span class="text-success">*</span></label>
                     <input v-model="form.address" type="text" class="form-control border-primary" required>
                   </div>
-
 
                   <div class="col-12 mb-3">
                     <label>Correo Electronico:<span class="text-success">*</span></label>
@@ -294,7 +294,8 @@ export default {
         reschedulingDate: ""
       },
 
-      documentTypes: [], // Ahora se cargará desde la API
+      documentTypes: [], // Se carga desde la API
+      departments: [], // Nueva variable para los departamentos
 
       ordenMedicaPreview: null,
       autorizacionEpsPreview: null,
@@ -305,15 +306,25 @@ export default {
 
   mounted() {
     this.fetchDocumentTypes();
+    this.fetchDepartments(); // Cargar departamentos al iniciar
   },
 
   methods: {
     async fetchDocumentTypes() {
       try {
         const response = await axios.get("http://127.0.0.1:8000/api/patient/document-types");
-        this.documentTypes = response.data; // Guarda los datos en documentTypes
+        this.documentTypes = response.data;
       } catch (error) {
         console.error("Error al cargar los tipos de documento:", error);
+      }
+    },
+
+    async fetchDepartments() {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/departments");
+        this.departments = response.data;
+      } catch (error) {
+        console.error("Error al cargar los departamentos:", error);
       }
     },
 
