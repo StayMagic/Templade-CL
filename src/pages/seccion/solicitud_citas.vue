@@ -81,24 +81,24 @@
 
 
                   <div class="col-lg-3 col-sm-6 col-12 mb-3">
-                    <label>Departamento de <strong>residencia</strong>:<span class="text-success">*</span></label>
-                    <select v-model="form.department" class="form-select border-primary" required>
-                      <option value="">Seleccione</option>
-                      <option v-for="dep in departments" :key="dep.id" :value="dep.id">
-                        {{ dep.name }}
-                      </option>
-                    </select>
-                  </div>
+  <label>Departamento de <strong>residencia</strong>:<span class="text-success">*</span></label>
+  <select v-model="form.department" class="form-select border-primary" required>
+    <option value="">Seleccione</option>
+    <option v-for="dep in departments" :key="dep.id" :value="dep.id">
+      {{ dep.name }}
+    </option>
+  </select>
+</div>
 
-                  <div class="col-lg-3 col-sm-6 col-12 mb-3">
-                    <label>Municipio de <strong>residencia</strong>:<span class="text-success">*</span></label>
-                    <select v-model="form.municipality" class="form-select border-primary" required>
-                      <option value="">Seleccione</option>
-                      <option v-for="mun in municipality" :key="mun.value" :value="mun.value">
-                        {{ mun.label }}
-                      </option>
-                    </select>
-                  </div>
+<div class="col-lg-3 col-sm-6 col-12 mb-3">
+  <label>Municipio de <strong>residencia</strong>:<span class="text-success">*</span></label>
+  <select v-model="form.municipality" class="form-select border-primary" required>
+    <option value="">Seleccione</option>
+    <option v-for="mun in municipalities" :key="mun.id" :value="mun.id">
+      {{ mun.name }}
+    </option>
+  </select>
+</div>
 
                   <div class="col-lg-6 col-sm-12 col-12 mb-3">
                     <label>Dirección de residencia:<span class="text-success">*</span></label>
@@ -295,7 +295,8 @@ export default {
       },
 
       documentTypes: [], // Se carga desde la API
-      departments: [], // Nueva variable para los departamentos
+      departments: [], // Lista de departamentos
+      municipalities: [], // Lista de municipios filtrados
 
       ordenMedicaPreview: null,
       autorizacionEpsPreview: null,
@@ -307,6 +308,17 @@ export default {
   mounted() {
     this.fetchDocumentTypes();
     this.fetchDepartments(); // Cargar departamentos al iniciar
+  },
+
+  watch: {
+    // Cuando cambia el departamento, se cargan los municipios correspondientes
+    'form.department': function (newDepartment) {
+      if (newDepartment) {
+        this.fetchMunicipalities(newDepartment);
+      } else {
+        this.municipalities = []; // Si no hay departamento, limpiar municipios
+      }
+    }
   },
 
   methods: {
@@ -325,6 +337,16 @@ export default {
         this.departments = response.data;
       } catch (error) {
         console.error("Error al cargar los departamentos:", error);
+      }
+    },
+
+    async fetchMunicipalities(departmentId) {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8000/api/municipalities/${departmentId}`);
+        this.municipalities = response.data;
+      } catch (error) {
+        console.error("Error al cargar los municipios:", error);
+        this.municipalities = []; // Limpiar en caso de error
       }
     },
 
@@ -447,10 +469,12 @@ export default {
         cancellationDate: "",
         reschedulingDate: ""
       };
+      this.municipalities = []; // Limpiar municipios al resetear el formulario
     }
   }
 };
 </script>
+
 
 
 <style scoped>
