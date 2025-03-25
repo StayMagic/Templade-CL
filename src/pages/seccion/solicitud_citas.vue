@@ -81,24 +81,24 @@
 
 
                   <div class="col-lg-3 col-sm-6 col-12 mb-3">
-  <label>Departamento de <strong>residencia</strong>:<span class="text-success">*</span></label>
-  <select v-model="form.department" class="form-select border-primary" required>
-    <option value="">Seleccione</option>
-    <option v-for="dep in departments" :key="dep.id" :value="dep.id">
-      {{ dep.name }}
-    </option>
-  </select>
-</div>
+      <label>Departamento de <strong>residencia</strong>:<span class="text-success">*</span></label>
+      <select v-model="form.department" class="form-select border-primary" required>
+        <option value="">Seleccione</option>
+        <option v-for="dep in departments" :key="dep.id" :value="dep.id">
+          {{ dep.name }}
+        </option>
+      </select>
+    </div>
 
-<div class="col-lg-3 col-sm-6 col-12 mb-3">
-  <label>Municipio de <strong>residencia</strong>:<span class="text-success">*</span></label>
-  <select v-model="form.municipality" class="form-select border-primary" required>
-    <option value="">Seleccione</option>
-    <option v-for="mun in municipalities" :key="mun.id" :value="mun.id">
-      {{ mun.name }}
-    </option>
-  </select>
-</div>
+    <div class="col-lg-3 col-sm-6 col-12 mb-3">
+      <label>Municipio de <strong>residencia</strong>:<span class="text-success">*</span></label>
+      <select v-model="form.municipality" class="form-select border-primary" required>
+        <option value="">Seleccione</option>
+        <option v-for="mun in municipalities" :key="mun.id" :value="mun.id">
+          {{ mun.name }}
+        </option>
+      </select>
+    </div>
 
                   <div class="col-lg-6 col-sm-12 col-12 mb-3">
                     <label>Dirección de residencia:<span class="text-success">*</span></label>
@@ -294,14 +294,14 @@ export default {
         reschedulingDate: ""
       },
 
-      documentTypes: [], // Se carga desde la API
-      departments: [], // Lista de departamentos
-      municipalities: [], // Lista de municipios filtrados
+      documentTypes: [],
+      departments: [],
+      municipalities: [],
 
       ordenMedicaPreview: null,
       autorizacionEpsPreview: null,
       showForm: false,
-      showConfirmationModal: false,  // Control para el modal de confirmación
+      showConfirmationModal: false,
     };
   },
 
@@ -311,12 +311,11 @@ export default {
   },
 
   watch: {
-    // Cuando cambia el departamento, se cargan los municipios correspondientes
     'form.department': function (newDepartment) {
       if (newDepartment) {
         this.fetchMunicipalities(newDepartment);
       } else {
-        this.municipalities = []; // Si no hay departamento, limpiar municipios
+        this.municipalities = []; // Limpiar municipios cuando no hay departamento
       }
     }
   },
@@ -341,14 +340,19 @@ export default {
     },
 
     async fetchMunicipalities(departmentId) {
-      try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/municipalities/${departmentId}`);
-        this.municipalities = response.data;
-      } catch (error) {
-        console.error("Error al cargar los municipios:", error);
-        this.municipalities = []; // Limpiar en caso de error
-      }
-    },
+  try {
+    console.log("Consultando municipios para departmentId:", departmentId); // ✅ Verifica el ID
+    const response = await axios.get(
+      `http://127.0.0.1:8000/api/municipalities`, 
+      { params: { department_id: departmentId } }
+    );
+    console.log("Respuesta del servidor:", response.data); // ✅ Verifica los datos
+    this.municipalities = response.data;
+  } catch (error) {
+    console.error("Error al cargar los municipios:", error.response || error); // ✅ Ver error detallado
+    this.municipalities = [];
+  }
+},
 
     async buscarPaciente() {
       if (!this.form.document) {
@@ -377,28 +381,6 @@ export default {
           alert('Hubo un error al buscar el paciente. Intente nuevamente.');
         }
       }
-    },
-
-    handleOrdenMedicaUpload(event) {
-      const file = event.target.files[0];
-      if (file) {
-        this.ordenMedicaPreview = URL.createObjectURL(file);
-      }
-    },
-
-    handleAutorizacionEpsUpload(event) {
-      const file = event.target.files[0];
-      if (file) {
-        this.autorizacionEpsPreview = URL.createObjectURL(file);
-      }
-    },
-
-    showModal() {
-      this.showConfirmationModal = true;
-    },
-
-    closeModal() {
-      this.showConfirmationModal = false;
     },
 
     async submitForm() {
