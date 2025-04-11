@@ -36,9 +36,12 @@
                       placeholder="Número de Identificación" required>
                   </div>
                   <div class="col-sm-4 col-12 mt-1">
-                    <div class="d-grid gap-2">
-                      <button type="button" @click="buscarPaciente" class="btn btn-primary">
-                        <i class="icofont-search"></i> Continuar
+                    <div class="d-grid gap-2 d-md-flex">
+                      <button type="button" @click="buscarPaciente" class="btn btn-outline-primary me-md-2">
+                        <i class="icofont-search"></i> Buscar
+                      </button>
+                      <button type="button" @click="mostrarFormulario" class="btn btn-primary">
+                        <i class="icofont-arrow-right"></i> Continuar
                       </button>
                     </div>
                   </div>
@@ -81,24 +84,24 @@
 
 
                   <div class="col-lg-3 col-sm-6 col-12 mb-3">
-      <label>Departamento de <strong>residencia</strong>:<span class="text-success">*</span></label>
-      <select v-model="form.department" class="form-select border-primary" required>
-        <option value="">Seleccione</option>
-        <option v-for="dep in departments" :key="dep.id" :value="dep.id">
-          {{ dep.name }}
-        </option>
-      </select>
-    </div>
+                    <label>Departamento de <strong>residencia</strong>:<span class="text-success">*</span></label>
+                    <select v-model="form.department" class="form-select border-primary" required>
+                      <option value="">Seleccione</option>
+                      <option v-for="dep in departments" :key="dep.id" :value="dep.id">
+                        {{ dep.name }}
+                      </option>
+                    </select>
+                  </div>
 
-    <div class="col-lg-3 col-sm-6 col-12 mb-3">
-      <label>Municipio de <strong>residencia</strong>:<span class="text-success">*</span></label>
-      <select v-model="form.municipality" class="form-select border-primary" required>
-        <option value="">Seleccione</option>
-        <option v-for="mun in municipalities" :key="mun.id" :value="mun.id">
-          {{ mun.name }}
-        </option>
-      </select>
-    </div>
+                  <div class="col-lg-3 col-sm-6 col-12 mb-3">
+                    <label>Municipio de <strong>residencia</strong>:<span class="text-success">*</span></label>
+                    <select v-model="form.municipality" class="form-select border-primary" required>
+                      <option value="">Seleccione</option>
+                      <option v-for="mun in municipalities" :key="mun.id" :value="mun.id">
+                        {{ mun.name }}
+                      </option>
+                    </select>
+                  </div>
 
                   <div class="col-lg-6 col-sm-12 col-12 mb-3">
                     <label>Dirección de residencia:<span class="text-success">*</span></label>
@@ -174,7 +177,7 @@
                     </select>
                   </div>
 
-                  <div v-if="form.entityHealth === '26'" class="col-12 mb-3">
+                  <div v-if="form.processType === 'Agendar Cita'" class="col-12 mb-3">
                     <label>Si selecciono <b>OTRAS</b>, por favor escriba el nombre de la entidad:</label>
                     <input v-model="form.customHealthEntity" type="text" class="form-control border-primary">
                   </div>
@@ -183,7 +186,7 @@
                     <label>Regimen:<span class="text-success">*</span></label>
                     <select v-model="form.regime" class="form-select border-primary" required>
                       <option value="">Seleccione</option>
-                      <option v-for="reg in regime" :key="reg.value" :value="reg.value">
+                      <option v-for="reg in regimeOptions" :key="reg.value" :value="reg.value">
                         {{ reg.label }}
                       </option>
                     </select>
@@ -241,6 +244,7 @@
                     </div>
                   </div>
 
+                  
 
                   <div class="col-12 mb-3 text-center">
                     <button type="submit" class="btn btn-primary">
@@ -285,7 +289,6 @@ export default {
         processType: "",
         entityHealth: "",
         regime: "",
-        appointmentType: "",
         service: "",
         authorizationNumber: "",
         specialty: "",
@@ -293,11 +296,13 @@ export default {
         cancellationDate: "",
         reschedulingDate: ""
       },
-
       documentTypes: [],
       departments: [],
       municipalities: [],
-
+      entityHealth: [],
+      regimeOptions: [],
+      specialty: [],
+      service: [],
       ordenMedicaPreview: null,
       autorizacionEpsPreview: null,
       showForm: false,
@@ -307,7 +312,11 @@ export default {
 
   mounted() {
     this.fetchDocumentTypes();
-    this.fetchDepartments(); // Cargar departamentos al iniciar
+    this.fetchDepartments();
+    this.fetchHealthEntities();
+    this.fetchRegime();
+    this.fetchSpecialty();
+    this.fetchService();
   },
 
   watch: {
@@ -315,7 +324,7 @@ export default {
       if (newDepartment) {
         this.fetchMunicipalities(newDepartment);
       } else {
-        this.municipalities = []; // Limpiar municipios cuando no hay departamento
+        this.municipalities = [];
       }
     }
   },
@@ -340,85 +349,252 @@ export default {
     },
 
     async fetchMunicipalities(departmentId) {
-  try {
-    console.log("Consultando municipios para departmentId:", departmentId); // ✅ Verifica el ID
-    const response = await axios.get(
-      `http://127.0.0.1:8000/api/municipalities`, 
-      { params: { department_id: departmentId } }
-    );
-    console.log("Respuesta del servidor:", response.data); // ✅ Verifica los datos
-    this.municipalities = response.data;
-  } catch (error) {
-    console.error("Error al cargar los municipios:", error.response || error); // ✅ Ver error detallado
-    this.municipalities = [];
-  }
-},
+      try {
+        console.log("Consultando municipios para departmentId:", departmentId);
+        const response = await axios.get(
+          `http://127.0.0.1:8000/api/municipalities`,
+          { params: { department_id: departmentId } }
+        );
+        console.log("Respuesta del servidor:", response.data);
+        this.municipalities = response.data;
+      } catch (error) {
+        console.error("Error al cargar los municipios:", error.response || error);
+        this.municipalities = [];
+      }
+    },
 
-    async buscarPaciente() {
-      if (!this.form.document) {
-        alert('Por favor, ingrese el número de documento.');
+    // Nuevo método para cargar las entidades de salud
+    async fetchHealthEntities() {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/health-entities");
+        // Transformamos los datos al formato que necesita el select (value/label)
+        this.entityHealth = response.data.map(item => ({
+          value: item.id,
+          label: item.name
+        }));
+      } catch (error) {
+        console.error("Error al cargar las entidades de salud:", error);
+        this.entityHealth = [];
+      }
+    },
+
+    async fetchRegime() {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/regime");
+        console.log("Datos de régimen recibidos:", response.data); // ← Agrega esto
+        this.regimeOptions = response.data.map(item => ({
+          value: item.id,
+          label: item.name
+        }));
+      } catch (error) {
+        console.error("Error al cargar los regímenes:", error.response || error);
+        this.regimeOptions = [];
+      }
+    },
+
+    async fetchSpecialty() {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/especialidad");
+        console.log("Datos de régimen recibidos:", response.data); // ← Agrega esto
+        this.specialty = response.data.map(item => ({
+          value: item.id,
+          label: item.name
+        }));
+      } catch (error) {
+        console.error("Error al cargar los regímenes:", error.response || error);
+        this.speciality = [];
+      }
+    },
+
+
+    async fetchService() {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/service");
+        console.log("Datos de régimen recibidos:", response.data); // ← Agrega esto
+        this.service = response.data.map(item => ({
+          value: item.id,
+          label: item.name
+        }));
+      } catch (error) {
+        console.error("Error al cargar los regímenes:", error.response || error);
+        this.service = [];
+      }
+    },
+
+
+    resetFormFields() {
+      // Guardamos los valores del documento que no queremos resetear
+      const { documentType, document } = this.form;
+
+      // Reseteamos el objeto form manteniendo tipo y número de documento
+      this.form = {
+        documentType,
+        document,
+        firstName: '',
+        secondName: '',
+        firstLastName: '',
+        secondLastName: '',
+        birthday: '',
+        phone: '',
+        secondPhone: '',
+        department: '',
+        municipality: '',
+        address: '',
+        email: '',
+        gender: '',
+        bloodGroup: '',
+        rh: '',
+      };
+
+      // También puedes resetear las vistas previas de imágenes si las tienes
+      this.ordenMedicaPreview = null;
+      this.autorizacionEpsPreview = null;
+    },
+
+    // Método para mostrar formulario vacío
+    async mostrarFormulario() {
+      if (!this.form.documentType || !this.form.document) {
+        alert('Por favor, seleccione el tipo e ingrese el número de documento.');
         return;
       }
+
       try {
+        // Resetear campos del formulario
+        this.resetFormFields();
+
+        // Mostrar formulario vacío
+        this.showForm = true;
+
+      } catch (error) {
+        console.error('Error al mostrar formulario:', error);
+        alert('Ocurrió un error al preparar el formulario. Intente nuevamente.');
+      }
+    },
+
+    // Método para buscar paciente
+    async buscarPaciente() {
+      if (!this.form.documentType || !this.form.document) {
+        alert('Por favor, seleccione el tipo e ingrese el número de documento.');
+        return;
+      }
+
+      try {
+        // Resetear campos antes de nueva búsqueda
+        this.resetFormFields();
+
         const url = `http://127.0.0.1:8000/api/patient/buscar/${this.form.document}`;
         const response = await axios.get(url);
 
-        const patient = response.data;
-        this.form.firstName = patient.firstName;
-        this.form.secondName = patient.secondName || '';
-        this.form.firstLastName = patient.firstLastName;
-        this.form.secondLastName = patient.secondLastName || '';
-        this.form.birthday = patient.birthday;
-        this.form.gender = patient.gender;
-        this.form.bloodGroup = patient.bloodGroup;
-        this.form.rh = patient.rh;
+        if (!response.data) {
+          throw new Error('Paciente no encontrado');
+        }
+
+
+        this.form.firstName = response.data.firstName || '';
+        this.form.secondName = response.data.secondName || '';
+        this.form.firstLastName = response.data.firstLastName || '';
+        this.form.secondLastName = response.data.secondLastName || '';
+        this.form.birthday = response.data.birthday || '';
+        this.form.phone = response.data.phone || '';
+        this.form.gender = response.data.gender || '';
+        this.form.bloodGroup = response.data.bloodGroup || '';
+        this.form.rh = response.data.rh || ''
+
+        // Mostrar el formulario con los datos cargados
         this.showForm = true;
+
       } catch (error) {
         console.error('Error al buscar el paciente:', error);
-        if (error.response && error.response.status === 404) {
+        this.manejarErrorBusqueda(error);
+      }
+    },
+
+    // Método auxiliar para manejar errores
+    manejarErrorBusqueda(error) {
+      if (error.response) {
+        if (error.response.status === 404) {
           alert('Paciente no encontrado. Verifique el número de documento.');
         } else {
-          alert('Hubo un error al buscar el paciente. Intente nuevamente.');
+          alert(`Error del servidor: ${error.response.status}`);
         }
+      } else {
+        alert('Error de conexión. Verifique su red e intente nuevamente.');
       }
     },
 
     async submitForm() {
-      if (!this.form.processType) {
-        alert('Por favor, seleccione un tipo de trámite.');
+      // Validación básica
+      if (!this.form.documentType || !this.form.document) {
+        alert('Tipo y número de documento son obligatorios');
         return;
       }
 
       try {
-        let url = 'http://127.0.0.1:8000/api/patient/new';
-        let postData = { ...this.form };
+        // Preparar datos (convertir tipos y evitar nulls)
+        const formData = {
+          documentType: this.form.documentType,
+          document: this.form.document,
+          firstName: this.form.firstName || "",
+          secondName: this.form.secondName || "",
+          firstLastName: this.form.firstLastName || "",
+          secondLastName: this.form.secondLastName || "",
+          birthday: this.form.birthday || null, // Asegúrate de que el formato sea YYYY-MM-DD
+          phone: this.form.phone || "",
+          secondPhone: this.form.secondPhone || "",
+          department: Number(this.form.department), // Si es ID
+          municipality: Number(this.form.municipality), // Si es ID
+          address: this.form.address || "",
+          email: this.form.email || "",
+          gender: this.form.gender || "",
+          bloodGroup: this.form.bloodGroup || "",
+          rh: this.form.rh || "",
+          processType: this.form.processType || "",
+          entityHealth: Number(this.form.entityHealth), // Si es ID
+          regime: Number(this.form.regime), // Si es ID
+          service: Number(this.form.service), // Si es ID
+          authorizationNumber: this.form.authorizationNumber || "",
 
-        if (this.form.processType === 'Agendar Cita') {
-          postData = { ...postData, cancellationDate: null, reschedulingDate: null };
-        } else if (this.form.processType === 'Cancelar Cita') {
-          postData.reschedulingDate = null;
-          if (!this.form.cancellationDate) {
-            alert('Por favor, ingrese la fecha de cancelación.');
-            return;
-          }
-        } else if (this.form.processType === 'Reprogramar Cita') {
-          postData.cancellationDate = null;
-          if (!this.form.reschedulingDate) {
-            alert('Por favor, ingrese la fecha de reprogramación.');
-            return;
-          }
+          specialty: this.form.specialty.toString(), // Asegurar que sea string
+
+
+          customHealthEntity: this.form.customHealthEntity || "",
+          cancellationDate: this.form.cancellationDate || null,
+          reschedulingDate: this.form.reschedulingDate || null
+        };
+
+        console.log('Datos a enviar:', formData);
+
+
+        const response = await axios.post(
+          'http://127.0.0.1:8000/api/patient/new',
+          formData,
+          { headers: { 'Content-Type': 'application/json' } }
+        );
+
+        if (response.status === 201) {
+          alert('¡Paciente registrado!');
+          this.resetForm();
         }
-
-        const response = await axios.post(url, postData, {
-          headers: { 'Content-Type': 'application/json' },
-        });
-
-        console.log('Respuesta del servidor:', response.data);
-        this.resetForm();
-        alert('Solicitud enviada con éxito');
       } catch (error) {
-        console.error('Error al enviar los datos:', error);
-        alert('Hubo un error al enviar la solicitud');
+        console.error('Error:', error.response?.data || error.message);
+        alert(`Error: ${error.response?.data?.message || 'Verifica la consola'}`);
+      }
+    },
+
+
+    // Método para manejar la subida de la orden médica
+    handleOrdenMedicaUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.ordenMedicaPreview = URL.createObjectURL(file);
+      }
+    },
+
+    // Método para manejar la subida de la autorización EPS
+    handleAutorizacionEpsUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.autorizacionEpsPreview = URL.createObjectURL(file);
       }
     },
 
@@ -443,7 +619,6 @@ export default {
         processType: "",
         entityHealth: "",
         regime: "",
-        appointmentType: "",
         service: "",
         authorizationNumber: "",
         specialty: "",
@@ -451,12 +626,11 @@ export default {
         cancellationDate: "",
         reschedulingDate: ""
       };
-      this.municipalities = []; // Limpiar municipios al resetear el formulario
+      this.municipalities = [];
     }
   }
 };
 </script>
-
 
 
 <style scoped>
