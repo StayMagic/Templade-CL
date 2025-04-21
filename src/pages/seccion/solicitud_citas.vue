@@ -25,7 +25,7 @@
                   <div class="col-sm-4 col-12 mt-1">
                     <select v-model="form.documentType" class="form-select border-primary" required>
                       <option value="">Tipo de Identificación</option>
-                      <option v-for="tipo in documentTypes" :key="tipo.value" :value="tipo.value">
+                      <option v-for="tipo in documentTypes" :key="tipo.id" :value="tipo.id">
                         {{ tipo.label }}
                       </option>
                     </select>

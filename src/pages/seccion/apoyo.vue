@@ -1,7 +1,7 @@
 <template>
    <header class="section-header">
       <div class="header-content">
-        <h1 class="header-title">APOYO DIAGNISTICO</h1>
+        <h1 class="header-title">APOYO DIAGNOSTICO</h1>
         <p class="header-description">Tecnología avanzada para un diagnóstico preciso y eficiente, brindando los mejores
           resultados en las áreas de laboratorio, cardiología, radiología y más.</p>
       </div>

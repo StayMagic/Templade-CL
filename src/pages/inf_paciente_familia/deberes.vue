@@ -128,7 +128,7 @@ export default {
 /* Contenedor principal */
 .container {
   text-align: center;
-  padding: 20px;
+  padding: 57px;
 }
 
 /* Acordeón */
@@ -148,7 +148,7 @@ export default {
   cursor: pointer;
   background-color: #003366;
   color: white;
-  padding: 15px;
+  padding: 4px;
   border-radius: 5px;
   font-size: 18px;
   font-weight: bold;

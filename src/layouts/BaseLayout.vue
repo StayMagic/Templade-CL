@@ -105,12 +105,7 @@
                                             Informacion
                                         </router-link>
                                     </li>
-                                    <li>
-                                        <router-link to="/otras-opciones/derechos"
-                                            :class="{ active: $route.path === '/otras-opciones/derechos' }">
-                                            Derechos y Deberes
-                                        </router-link>
-                                    </li>
+                                   
                                 </ul>
                             </li>
                             <li>

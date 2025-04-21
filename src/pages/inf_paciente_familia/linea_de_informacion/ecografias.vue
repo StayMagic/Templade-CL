@@ -1,26 +1,25 @@
 <template>
-  <div class="position-relative overflow-hidden pl-0 ml-0 pr-0 mr-0 bg-light">
-    <div class="row justify-content-center">
-      <div class="col-md-11 col-12 mt-4 text-left">
-        <div class="row flex">
-          <div class="col-12 blog-main">
-            <header class="about-header">
-                        <div class="container">
-                            <h1 class="main-title">Preparación para Ecografías o Ultrasonidos</h1>
-                        </div>
-                    </header>
-            
-            <!-- Procedimiento Cards -->
-            <div v-for="(procedimiento, index) in procedimientos" :key="index" class="card mb-4">
-              <div class="card-body">
-                <h4>{{ procedimiento.titulo }}</h4>
-                <div class="row">
-                  <img class="col-md-3 img-size" :src="procedimiento.imagen" :alt="procedimiento.titulo">
-                  <ul class="col-md-7">
-                    <li v-for="(detalle, i) in procedimiento.detalles" :key="i">{{ detalle }}</li>
-                  </ul>
-                </div>
-                <h6 v-if="procedimiento.nota">{{ procedimiento.nota }}</h6>
+  <div class="preparacion-ecografias">
+    <header class="page-header">
+      <div class="container">
+        <h1 class="main-title">Preparación para Ecografías o Ultrasonidos</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="procedimientos-list">
+        <div v-for="(procedimiento, index) in procedimientos" :key="index" class="procedimiento-card-wide">
+          <div class="card-content-wide">
+            <div class="card-image-wide">
+              <img :src="procedimiento.imagen" :alt="procedimiento.titulo" class="img-fluid">
+            </div>
+            <div class="card-text-wide">
+              <h3>{{ procedimiento.titulo }}</h3>
+              <ul class="preparacion-list">
+                <li v-for="(detalle, i) in procedimiento.detalles" :key="i">{{ detalle }}</li>
+              </ul>
+              <div v-if="procedimiento.nota" class="nota-importante">
+                <strong>Nota:</strong> {{ procedimiento.nota }}
               </div>
             </div>
           </div>
@@ -36,106 +35,98 @@ export default {
     return {
       procedimientos: [
         {
-          titulo: "Instructivo de preparación para ecografía o ultrasonografía de abdomen total",
+          titulo: "Ecografía de abdomen total",
           imagen: "/src/assets/procedimientos/eco-abdomen.jpg",
           detalles: [
-            "Debe tener ayuno de 8 horas (No debe comer nada antes del examen).",
-            "No orine antes de realizarse el examen.",
-            "Presentarse preferiblemente con vestido de dos piezas.",
-            "PACIENTE AMBULATORIO: traer autorización de la EPS, con fecha vigente y dirigida a la Sociedad de Especialistas de Girardot.",
-            "Debe traer el copago si es beneficiario, cuota moderadora si es cotizante.",
-            "Llegar 30 minutos antes de la hora de la cita.",
-            "Traer todos los estudios previos el día del examen."
+            "Ayuno de 8 horas (no comer antes del examen)",
+            "No orinar antes del examen",
+            "Vestido de dos piezas preferiblemente",
+            "Autorización EPS vigente (pacientes ambulatorios)",
+            "Copago o cuota moderadora según corresponda",
+            "Llegar 30 minutos antes de la cita",
+            "Traer estudios previos"
           ],
           nota: ""
         },
         {
-          titulo: "Ecografía o ultrasonografía de abdomen superior hepatobiliar",
+          titulo: "Ecografía abdomen superior hepatobiliar",
           imagen: "/src/assets/procedimientos/eco-hepato.jpg",
           detalles: [
-            "Debe tener ayuno de 8 horas (No debe comer nada antes del examen).",
-            "El día antes del examen debe consumir el último alimento a las 6:00 o 7:00 p.m.",
-            "PACIENTE AMBULATORIO: traer Autorización de la EPS, con fecha vigente y dirigida a la Sociedad de Especialistas de Girardot.",
-            "Presentarse preferiblemente con vestido de dos piezas.",
-            "Debe traer el copago si es beneficiario, cuota moderadora si es cotizante.",
-            "Llegar 30 minutos antes de la hora de la cita.",
-            "Traer todos los estudios previos el día del examen."
+            "Ayuno de 8 horas",
+            "Última comida el día anterior a las 6-7 p.m.",
+            "Autorización EPS vigente",
+            "Vestido de dos piezas preferiblemente",
+            "Copago o cuota moderadora",
+            "Llegar 30 minutos antes",
+            "Traer estudios previos"
           ],
           nota: ""
         },
         {
-          titulo: "Ecografía o ultrasonografía renal/ de vías urinarias/ obstétrica de primer trimestre/pélvica/próstata transabdominal",
+          titulo: "Ecografía renal/vías urinarias/pélvica",
           imagen: "/src/assets/procedimientos/eco-pelvica.jpg",
           detalles: [
-            "Requiere 6 horas de ayuno.",
-            "El día anterior al examen, dieta ligera.",
-            "No debe suspender medicación habitual.",
-            "Si el examen se practica en la tarde, puede desayunar respetando las 6 horas de ayuno. En el caso de paciente diabética, puede comer algo ligero sobre el mediodía.",
-            "Debe tomar 6 a 8 vasos de agua 1 a 2 horas antes del procedimiento (Vejiga llena).",
-            "No orine antes de realizarse el examen.",
-            "PACIENTE AMBULATORIO: traer Autorización de la EPS, con fecha vigente y dirigida a la Sociedad de Especialistas de Girardot.",
-            "Presentarse preferiblemente en vestido de 2 piezas.",
-            "Debe traer el copago si es beneficiario, cuota moderadora si es cotizante.",
-            "Llegar 30 minutos antes de la hora de la cita."
+            "6 horas de ayuno",
+            "Dieta ligera el día anterior",
+            "No suspender medicación habitual",
+            "6-8 vasos de agua 1-2 horas antes",
+            "Vejiga llena (no orinar antes)",
+            "Autorización EPS vigente",
+            "Vestido de dos piezas"
           ],
-          nota: "NOTA: Para ecografía obstétrica con un tiempo de gestación menor a 13 semanas, no tomar líquidos."
+          nota: "Para ecografía obstétrica <13 semanas, no tomar líquidos"
         },
         {
-          titulo: "Ecografía o ultrasonografía transvaginal",
+          titulo: "Ecografía transvaginal",
           imagen: "/src/assets/procedimientos/eco-transvaginal.jpg",
           detalles: [
-            "Eliminar orina antes de realizar el examen.",
-            "Traer 2 preservativos o condones.",
-            "No debe suspender medicación habitual.",
-            "PACIENTE AMBULATORIO: traer Autorización de la EPS, con fecha vigente y dirigida a la Sociedad de Especialistas de Girardot.",
-            "Presentarse preferiblemente en vestido de 2 piezas.",
-            "Debe traer el copago si es beneficiario, cuota moderadora si es cotizante.",
-            "Llegar 30 minutos antes de la hora de la cita.",
-            "Traer todos los estudios previos el día del examen."
+            "Vaciar vejiga antes del examen",
+            "Traer 2 preservativos",
+            "No suspender medicación",
+            "Autorización EPS vigente",
+            "Vestido de dos piezas",
+            "Copago o cuota moderadora",
+            "Llegar 30 minutos antes"
           ],
-          nota: "NOTA: La ecografía Transvaginal se puede realizar con la menstruación."
+          nota: "Puede realizarse durante la menstruación"
         },
         {
-          titulo: "Ecografía o ultrasonografía de próstata transrectal",
+          titulo: "Ecografía de próstata transrectal",
           imagen: "/src/assets/procedimientos/eco-transrectal.jpg",
           detalles: [
-            "Colocarse un enema TRAVAD el día anterior al examen a las 6:00 p.m. y otra 1 hora antes del examen.",
-            "Dieta líquida el día anterior al examen, no debe contener granos, grasas, lácteos, bebidas oscuras ni gaseosas. El día del examen, estar en ayunas de 6 a 8 horas.",
-            "Traer 2 preservativos o condones.",
-            "Debe tomar 6 a 8 vasos de agua 1 a 2 horas antes del procedimiento (Vejiga llena).",
-            "No orine antes de realizarse el examen.",
-            "No debe suspender medicación habitual.",
-            "PACIENTE AMBULATORIO: traer Autorización de la EPS, con fecha vigente y dirigida a la Sociedad de Especialistas de Girardot.",
-            "Debe traer el copago si es beneficiario, cuota moderadora si es cotizante.",
-            "Llegar 30 minutos antes de la hora de la cita."
+            "Enema TRAVAD el día anterior y 1 hora antes",
+            "Dieta líquida el día anterior",
+            "Traer 2 preservativos",
+            "6-8 vasos de agua 1-2 horas antes",
+            "Vejiga llena (no orinar antes)",
+            "Autorización EPS vigente",
+            "Ayunas 6-8 horas"
           ],
           nota: ""
         },
         {
-          titulo: "Ecografía o ultrasonografía mamaria",
+          titulo: "Ecografía mamaria",
           imagen: "/src/assets/procedimientos/eco-mamaria.jpg",
           detalles: [
-            "PACIENTE AMBULATORIO: traer Autorización de la EPS, con fecha vigente y dirigida a la Sociedad de Especialistas de Girardot.",
-            "Presentarse preferiblemente con vestido de dos piezas.",
-            "Debe traer el copago si es beneficiario, cuota moderadora si es cotizante.",
-            "Llegar 30 minutos antes de la hora de la cita.",
-            "Traer los estudios previos el día del examen como: Mamografías y ecografías anteriores."
+            "Autorización EPS vigente",
+            "Vestido de dos piezas preferiblemente",
+            "Copago o cuota moderadora",
+            "Llegar 30 minutos antes",
+            "Traer mamografías y ecografías anteriores"
           ],
           nota: ""
         },
         {
-          titulo: "Instructivo de preparación para RX columna lumbar-sacro-cóxis/abdomen simple",
+          titulo: "RX columna lumbar/abdomen simple",
           imagen: "/src/assets/procedimientos/xray.jpg",
           detalles: [
-            "Dieta líquida el día anterior (caldos, jugos, agua aromática).",
-            "Desayuno: Caldo sin grasa, y colado (sin cebolla ni ajo), jugo sin leche y poca azúcar y infusión de té o aromática con poca azúcar.",
-            "Almuerzo: Caldo sin grasa, jugo de cualquier fruta sin leche y con poca azúcar, gelatina, agua de anís o té o cualquier agua aromática.",
-            "Comida: Igual que el almuerzo.",
-            "Si siente apetito entre comidas puede tomar agua aromática, té, jugo de frutas sin leche y con poca azúcar, tomar abundante líquido. NO DEBE TOMAR: leche, gaseosa, soda, ni tinto. DEBE SUSPENDER: Cigarrillo y chicle.",
-            "Venir en ayunas el día del examen.",
-            "Comprar un frasco Enema oral x 133 ml; disolver en un vaso de jugo de naranja artificial, tomar a sorbos a las 4:00 p.m. del día anterior al examen.",
-            "Se suspende la medicación de hierro y laxantes.",
-            "No orine antes del examen."
+            "Dieta líquida el día anterior",
+            "Enema oral a las 4 p.m. día anterior",
+            "Ayunas el día del examen",
+            "Suspender hierro y laxantes",
+            "No orinar antes del examen",
+            "No fumar ni masticar chicle",
+            "Evitar lácteos, gaseosas y café"
           ],
           nota: ""
         }
@@ -145,25 +136,159 @@ export default {
 };
 </script>
 
-
 <style scoped>
-.card {
+.preparacion-ecografias {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.page-header {
+  background-color: #003366;
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.procedimientos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.procedimiento-card-wide {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.procedimiento-card-wide:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-content-wide {
+  display: flex;
+  min-height: 250px;
+}
+
+.card-image-wide {
+  flex: 0 0 35%;
+  max-width: 35%;
+  overflow: hidden;
+}
+
+.card-image-wide img {
   width: 100%;
-  height: 500px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #fff;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.card-body {
-  padding: 20px;
-}
-.img-size {
-  height: 390px; /* Mantiene la proporción */
-  object-fit: cover; /* Asegura que las imágenes no se deformen */
+.procedimiento-card-wide:hover .card-image-wide img {
+  transform: scale(1.03);
 }
 
+.card-text-wide {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
 
+.card-text-wide h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.preparacion-list {
+  margin: 0 0 1rem 0;
+  padding-left: 1.2rem;
+  flex-grow: 1;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.preparacion-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #555;
+  break-inside: avoid;
+}
+
+.nota-importante {
+  background-color: #9c9c9c10;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #003366;
+  border-left: 4px solid #1368c9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .preparacion-list {
+    columns: 1;
+  }
+  
+  .card-image-wide {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .card-content-wide {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .card-image-wide {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+  
+  .card-text-wide h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    padding: 2rem 0;
+  }
+  
+  .main-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-image-wide {
+    height: 180px;
+  }
+  
+  .preparacion-list {
+    padding-left: 1rem;
+  }
+}
 </style>

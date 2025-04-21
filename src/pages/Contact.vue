@@ -20,7 +20,7 @@
           <div class="card">
             <i class="fa fa-phone"></i>
             <h3>Teléfono</h3>
-            <p>(1) 7943221</p>
+            <p>(+57) 3174336098</p>
           </div>
           <div class="card">
             <i class="fa fa-envelope"></i>
@@ -38,8 +38,7 @@
           <div class="schedule-card">
             <h3>Agendar citas</h3>
             <p>
-              Puedes agendar tu cita llamando a nuestro Contact Center al <strong>(1) 7943221</strong>
-              o utilizando nuestro chat en línea.
+              Puedes agendar tu cita atravez de nuestro whatsapp al <strong>+57 3174336098</strong>.
             </p>
           </div>
           <div class="schedule-card">

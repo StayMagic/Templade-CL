@@ -4,7 +4,7 @@
     <div class="card mb-4" style="width: 100%; border: 1px solid #ddd;">
       <div class="card-body">
         <!-- Contenido de la tarjeta -->
-        <div class="position-relative overflow-hidden pl-0 ml-0 pr-0 mr-0 bg-light">
+        <div class="position-relative overflow-hidden pl-0 ml-0 pr-0 mr-0">
           <div class="row justify-content-center">
             <div class="col-md-11 col-12 mt-4 text-left">
               <div class="row flex">
