@@ -337,7 +337,6 @@ export default {
 
 .section-header p {
   font-size: 1.1rem;
-  color: var(--text-light);
   max-width: 700px;
   margin: 0 auto;
 }

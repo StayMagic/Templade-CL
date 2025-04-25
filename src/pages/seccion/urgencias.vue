@@ -1,72 +1,132 @@
 <template>
-   <header class="section-header">
-      <div class="header-content">
-        <h1 class="header-title">URGENCIAS</h1>
-        <p class="header-description">Atención inmediata y especializada para emergencias médicas</p>
+  <header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">URGENCIAS</h1>
+      <p class="hero-subtitle">Atención inmediata las 24 horas</p>
+      <div class="hero-description">
+        <p>Servicio de emergencias médicas con respuesta rápida y profesional para salvar vidas</p>
       </div>
-    </header>
-  <section class="urgencias-section">
-    <div class="info-container">
-      <div class="image-container">
-        <img src="/src/assets/urgencias.png" alt="Urgencias" class="main-image" />
-      </div>
+    </div>
+  </header>
 
-      <div class="content">
-        <div class="blog-post pl-3 pr-3">
-          <p>Ubicada en la primera planta del nuevo edificio de la Sociedad de Especialistas, en la calle 13 No. 10-65,
-            se garantiza la atención continua e inmediata en urgencias médicas, quirúrgicas y traumáticas de mediana
-            complejidad, con talento humano altamente capacitado, calificado, certificado y con experiencia. Apoyados
-            con los recursos tecnológicos necesarios, para la obtención del diagnostico y la intervención terapéutica
-            oportuna. Contamos con un área de TRIAGE para priorizar las atenciones y una recepción al ingreso del
-            servicio con personal administrativo las 24 horas, para orientar al usuario y su familia en los trámites
-            administrativos requeridos para la atención.
+  <section class="emergency-section">
+    <div class="container">
+      <div class="emergency-intro">
+        <div class="intro-image">
+          <img src="/src/assets/urgencias.png" alt="Área de Urgencias" class="featured-image" loading="lazy" />
+        </div>
+        <div class="intro-content">
+          <h2 class="section-title">Emergencias Médicas Especializadas</h2>
+          <p class="section-text">
+            Ubicadas en la primera planta de nuestras instalaciones, ofrecemos atención continua e inmediata para
+            urgencias médicas, quirúrgicas y traumáticas de mediana complejidad. Contamos con personal altamente
+            capacitado y certificado, respaldado por tecnología de vanguardia para diagnósticos precisos y
+            tratamientos oportunos.
           </p>
-          <div class="row">
-            <div class="col-6">
-              <ul>
-                <li>Atencion de urgencias Generales 24 horas</li>
-                <li>Atencion Trige 24 horas</li>
-                <li>Dos Consultorios medicos</li>
-                <li>Sala de reanimacion</li>
-                <li>Sala de observacion pediatrica con 4 camillas</li>
-              </ul>
+
+          <div class="emergency-features">
+            <div class="feature-item">
+              <i class="fas fa-stopwatch"></i>
+              <div>
+                <h4>TRIAGE prioritario</h4>
+                <p>Sistema de clasificación para atención inmediata según gravedad</p>
+              </div>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Sala de observacion de mujeres con 4 camillas</li>
-                <li>sala de observacion de hombres con 4 camillas</li>
-                <li>sala de Yeso</li>
-                <li>sala de sutura, curacion y/o procedimientos menores</li>
-                <li>Urgencias especiales en medicina interna, ortopedia y traumatologia, urologia y oftalmologia</li>
-              </ul>
+
+            <div class="feature-item">
+              <i class="fas fa-user-clock"></i>
+              <div>
+                <h4>Recepción 24/7</h4>
+                <p>Personal administrativo siempre disponible para orientación</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <i class="fas fa-procedures"></i>
+              <div>
+                <h4>Áreas especializadas</h4>
+                <p>Espacios diferenciados para cada tipo de emergencia</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="image-collage">
-      <div class="collage-card">
-        <img src="/src/assets/urgencias.png" alt="Sala de Urgencias" class="collage-image" />
-        <div class="collage-content">
-          <h3>Sala de Urgencias</h3>
-          <p>Atención continua e inmediata para emergencias médicas.</p>
+      <div class="facilities-section">
+        <h3 class="facilities-title">Nuestras Instalaciones de Urgencias</h3>
+        <div class="facilities-grid">
+          <div class="facility-card">
+            <i class="fas fa-hospital-user"></i>
+            <h4>Atención General</h4>
+            <p>Servicio completo de urgencias las 24 horas</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-heartbeat"></i>
+            <h4>Sala de Reanimación</h4>
+            <p>Equipada para emergencias críticas</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-child"></i>
+            <h4>Pediatría</h4>
+            <p>Sala de observación con 4 camillas infantiles</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-venus"></i>
+            <h4>Área Femenina</h4>
+            <p>Sala de observación con 4 camillas</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-mars"></i>
+            <h4>Área Masculina</h4>
+            <p>Sala de observación con 4 camillas</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-band-aid"></i>
+            <h4>Sala de Yesos</h4>
+            <p>Atención especializada en traumatología</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-cut"></i>
+            <h4>Sala de Suturas</h4>
+            <p>Para procedimientos menores</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-stethoscope"></i>
+            <h4>Consultorios</h4>
+            <p>2 consultorios médicos completamente equipados</p>
+          </div>
         </div>
       </div>
-      <div class="collage-card">
-        <img src="/src/assets/urgencias.png" alt="Atención de Emergencias" class="collage-image" />
-        <div class="collage-content">
-          <h3>Atención de Emergencias</h3>
-          <p>Un equipo profesional altamente capacitado para actuar en urgencias.</p>
+
+      <div class="emergency-gallery">
+        <h3 class="gallery-title">Nuestro Servicio de Emergencias</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="/src/assets/urgencias.png" alt="Sala de Urgencias" class="gallery-image" />
+            <div class="gallery-overlay">
+              <h4>Sala de Urgencias</h4>
+              <p>Área equipada para atención inmediata las 24 horas</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/src/assets/urgencias.png" alt="Equipo Médico" class="gallery-image" />
+            <div class="gallery-overlay">
+              <h4>Equipo Profesional</h4>
+              <p>Médicos y enfermeras altamente capacitados</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/src/assets/urgencias.png" alt="Tecnología Avanzada" class="gallery-image" />
+            <div class="gallery-overlay">
+              <h4>Monitoreo Constante</h4>
+              <p>Tecnología de última generación para tu seguridad</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="collage-card">
-        <img src="/src/assets/urgencias.png" alt="Monitoreo de Pacientes" class="collage-image" />
-        <div class="collage-content">
-          <h3>Monitoreo de Pacientes</h3>
-          <p>Monitoreo constante de nuestros pacientes con tecnología avanzada.</p>
-        </div>
-      </div>
+
+      
     </div>
   </section>
 </template>
@@ -78,211 +138,461 @@ export default {
 </script>
 
 <style scoped>
-.urgencias-section {
-  padding: 60px 20px;
-  background-color: #f4f4f9;
+/* Variables de color */
+:root {
+  --primary: #d32f2f;
+  --primary-dark: #b71c1c;
+  --secondary: #1976d2;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  background: url('/src/assets/emergency-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #333;
+  color: white;
+  overflow: hidden;
 }
 
-.section-title {
-  font-size: 2.5rem;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #003366;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease;
 }
 
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease;
 }
 
-.breadcrumb {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #666;
+.hero-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  animation: fadeIn 2s ease;
 }
 
-.breadcrumb-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.breadcrumb-link:hover {
-  text-decoration: underline;
-}
-
-.breadcrumb-current {
-  color: #333;
+.emergency-banner {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
   font-weight: 600;
+  margin-top: 2rem;
+  animation: pulse 2s infinite;
 }
 
-.info-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 35px 120px;
+.emergency-banner i {
+  font-size: 1.5rem;
 }
 
-.image-container {
-  flex: 1;
-  max-width: 50%;
+/* Emergency Section */
+.emergency-section {
+  padding: 5rem 0;
+  background-color: var(--light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.emergency-intro {
   display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
   align-items: center;
 }
 
-.main-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  min-height: 100%;
-}
-
-.content {
+.intro-image {
   flex: 1;
-  text-align: left;
-  max-width: 50%;
-  padding-left: 20px;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
 
-.content p {
+.intro-image:hover .featured-image {
+  transform: scale(1.03);
+}
+
+.intro-content {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  margin-top: 1rem;
+}
+
+.section-text {
   font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-}
-
-.features-list {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 1rem;
-  color: #666;
+  color: var(--gray);
+  margin-bottom: 2rem;
   line-height: 1.8;
 }
 
-.features-list li {
-  margin-bottom: 10px;
+.emergency-features {
+  display: grid;
+  gap: 1.5rem;
 }
 
-
-.image-collage {
+.feature-item {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
-.collage-card {
+.feature-item i {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-top: 0.3rem;
+}
+
+.feature-item h4 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+/* Facilities Section */
+.facilities-section {
+  margin: 5rem 0;
+}
+
+.facilities-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 3rem;
   position: relative;
-  width: 30%;
-  height: 300px;
-  border-radius: 12px;
+}
+
+.facilities-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--secondary);
+  margin: 1rem auto 0;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.facility-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.facility-card i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.facility-card h4 {
+  font-size: 1.3rem;
+  color: var(--dark);
+  margin-bottom: 0.8rem;
+}
+
+.facility-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* Gallery Section */
+.emergency-gallery {
+  margin: 5rem 0;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.gallery-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--secondary);
+  margin: 1rem auto 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 250px;
 }
 
-.collage-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.collage-image {
+.gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
-.collage-card:hover .collage-image {
+.gallery-item:hover .gallery-image {
   transform: scale(1.1);
 }
 
-.collage-content {
-  padding: 15px;
-  background-color: #fff;
+.gallery-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  background: #0033668f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1.5rem;
   text-align: center;
 }
 
-.collage-content h3 {
-  font-size: 1.2rem;
-  color: #003366;
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
 }
 
-.collage-content p {
+.gallery-overlay h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.gallery-overlay p {
   font-size: 1rem;
-  color: #666;
 }
 
+/* Emergency Contact */
+.emergency-contact {
+  margin: 5rem auto;
+  max-width: 600px;
+}
 
+.contact-card {
+  background: var(--primary);
+  color: white;
+  border-radius: 10px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+}
 
-@media (max-width: 1420px) {
-  .info-container {
-    padding: 0 100px;
+.contact-card i {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.emergency-number {
+  display: inline-block;
+  background: white;
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.emergency-number:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
 @media (max-width: 992px) {
-  .info-container {
-    padding: 0 60px;
+  .hero-title {
+    font-size: 3rem;
   }
 
-  .image-container,
-  .content {
-    max-width: 50%;
+  .hero-subtitle {
+    font-size: 1.5rem;
   }
 
-  .main-image {
-    height: 640px;
+  .emergency-intro {
+    flex-direction: column;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
-@media (max-width: 760px) {
-  .info-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 20px;
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
   }
 
-  .image-container,
-  .content {
-    max-width: 100%;
+  .hero-subtitle {
+    font-size: 1.3rem;
   }
 
-  .main-image {
-    max-width: 100%;
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
     height: auto;
+    padding: 6rem 0;
   }
 
-  .content {
-    margin-top: 20px;
+  .hero-title {
+    font-size: 2rem;
   }
 
-  .image-collage {
-    flex-direction: column;
+  .facilities-grid {
+    grid-template-columns: 1fr;
   }
 
-  .collage-card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .collage-image {
-    object-fit: cover;
+  .emergency-number {
+    font-size: 1.5rem;
+    padding: 0.6rem 1.5rem;
   }
 }
 </style>

@@ -10,7 +10,7 @@
                     <nav>
                         <ul :class="['menu', { visible: mobileMenuOpen }]">
                             <li>
-                                <router-link to="/" :class="{ active: $route.path === '/' }">
+                                <router-link to="/" :class="{ active: $route.path === '/' }" @click="closeMenu">
                                     Inicio
                                 </router-link>
                             </li>
@@ -21,31 +21,31 @@
                                 <ul :class="['dropdown-menu', { visible: dropdownOpen }]">
                                     <li>
                                         <router-link to="/services/apoyo"
-                                            :class="{ active: $route.path === '/services/apoyo' }">
+                                            :class="{ active: $route.path === '/services/apoyo' }" @click="closeMenu">
                                             Apoyo Diagnóstico
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/services/consulta"
-                                            :class="{ active: $route.path === '/services/consulta' }">
+                                            :class="{ active: $route.path === '/services/consulta' }" @click="closeMenu">
                                             Consulta Externa
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/services/cirugia"
-                                            :class="{ active: $route.path === '/services/cirugia' }">
+                                            :class="{ active: $route.path === '/services/cirugia' }" @click="closeMenu">
                                             Cirugía
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/services/urgencia"
-                                            :class="{ active: $route.path === '/services/urgencia' }">
+                                            :class="{ active: $route.path === '/services/urgencia' }" @click="closeMenu">
                                             Urgencias
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/services/internacion"
-                                            :class="{ active: $route.path === '/services/internacion' }">
+                                            :class="{ active: $route.path === '/services/internacion' }" @click="closeMenu">
                                             Internación
                                         </router-link>
                                     </li>
@@ -58,19 +58,19 @@
                                 <ul :class="['dropdown-menu', { visible: clinicDropdownOpen }]">
                                     <li>
                                         <router-link to="/otras-opciones/pqrs"
-                                            :class="{ active: $route.path === '/otras-opciones/pqrs' }">
+                                            :class="{ active: $route.path === '/otras-opciones/pqrs' }" @click="closeMenu">
                                             PQRS
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/otras-opciones/estado"
-                                            :class="{ active: $route.path === '/otras-opciones/estado' }">
+                                            :class="{ active: $route.path === '/otras-opciones/estado' }" @click="closeMenu">
                                             Estados Financieros
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/otras-opciones/politicas"
-                                            :class="{ active: $route.path === '/otras-opciones/politicas' }">
+                                            :class="{ active: $route.path === '/otras-opciones/politicas' }" @click="closeMenu">
                                             Política de Tratamientos de Datos
                                         </router-link>
                                     </li>
@@ -83,25 +83,25 @@
                                 <ul :class="['dropdown-menu', { visible: patientInfoDropdownOpen }]">
                                     <li>
                                         <router-link to="/inf_paciente_familia/acompanante"
-                                            :class="{ active: $route.path === '/inf_paciente_familia/acompanante' }">
+                                            :class="{ active: $route.path === '/inf_paciente_familia/acompanante' }" @click="closeMenu">
                                             Acompañante
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/inf_paciente_familia/deberes"
-                                            :class="{ active: $route.path === '/inf_paciente_familia/deberes' }">
+                                            :class="{ active: $route.path === '/inf_paciente_familia/deberes' }" @click="closeMenu">
                                             Derechos y Deberes del Paciente
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/inf_paciente_familia/educacion"
-                                            :class="{ active: $route.path === '/inf_paciente_familia/educacion' }">
+                                            :class="{ active: $route.path === '/inf_paciente_familia/educacion' }" @click="closeMenu">
                                             Educacion
                                         </router-link>
                                     </li>
                                     <li>
                                         <router-link to="/inf_paciente_familia/informacion"
-                                            :class="{ active: $route.path === '/inf_paciente_familia/informacion' }">
+                                            :class="{ active: $route.path === '/inf_paciente_familia/informacion' }" @click="closeMenu">
                                             Informacion
                                         </router-link>
                                     </li>
@@ -109,19 +109,19 @@
                                 </ul>
                             </li>
                             <li>
-                                <router-link to="/conocenos" :class="{ active: $route.path === '/conocenos' }">
+                                <router-link to="/conocenos" :class="{ active: $route.path === '/conocenos' }" @click="closeMenu">
                                     Nosotros
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/contactanos" :class="{ active: $route.path === '/contactanos' }">
+                                <router-link to="/contactanos" :class="{ active: $route.path === '/contactanos' }" @click="closeMenu">
                                     Contacto
                                 </router-link>
                             </li>
                             <li>
                                 <a href="https://api.whatsapp.com/send/?phone=573174336098&text&type=phone_number&app_absent=0"
-                                    target="_blank" class="whatsapp-button">
-                                    <img src="/src/assets/WhatsApp.svg.png" alt="WhatsApp" class="whatsapp-icon" />
+                                    target="_blank" class="whatsapp-button" @click="closeMenu">
+                                    <img src="" alt="WhatsApp" class="whatsapp-icon" />
                                 </a>
                             </li>
                         </ul>
@@ -230,17 +230,17 @@ export default {
     toggleMobileMenu() {
       this.mobileMenuOpen = !this.mobileMenuOpen;
     },
-   
+    
     closeAllDropdowns() {
       this.dropdownOpen = false;
       this.clinicDropdownOpen = false;
       this.patientInfoDropdownOpen = false;
     },
-  
-    selectOption() {
-
+    
+    // Nuevo método para cerrar todo el menú (desplegables y menú móvil)
+    closeMenu() {
       this.closeAllDropdowns();
-   
+      this.mobileMenuOpen = false;
     },
 
     handleClickOutside(event) {
@@ -266,18 +266,21 @@ export default {
         isClickInside = true;
       }
 
-      
       if (!isClickInside) {
         this.closeAllDropdowns();
       }
     },
   },
   mounted() {
-   
     document.addEventListener('click', this.handleClickOutside);
+    
+    // Añadimos un listener para el evento de cambio de ruta
+    this.$router.afterEach(() => {
+      // Cerrar menús al cambiar de ruta
+      this.closeMenu();
+    });
   },
   beforeDestroy() {
-   
     document.removeEventListener('click', this.handleClickOutside);
   },
 };

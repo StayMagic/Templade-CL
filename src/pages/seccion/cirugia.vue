@@ -1,70 +1,115 @@
 <template>
-   <header class="section-header">
-      <div class="header-content">
-        <h1 class="header-title">CIRUGIA</h1>
-        <p class="header-description">Tecnología avanzada y un equipo experto a tu servicio</p>
+  <header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">CIRUGÍA</h1>
+      <p class="hero-subtitle">Excelencia quirúrgica con tecnología de vanguardia</p>
+      <div class="hero-description">
+        <p>Procedimientos seguros realizados por especialistas altamente calificados en instalaciones equipadas con lo
+          último en tecnología médica.</p>
       </div>
-    </header>
-  <section class="cirugia-section">
-    <!-- Contenedor principal -->
-    <div class="info-container">
-      <!-- Imagen a la izquierda -->
-      <div class="image-container">
-        <img src="/src/assets/cirugia.png" alt="Cirugía" class="main-image" />
-      </div>
+    </div>
+  </header>
 
-      <!-- Texto sobre Cirugía -->
-      <div class="content">
-        <div class="blog-post pl-3 pr-3">
-          <p>
-            Nuestras salas de cirugía cuentan con el equipamiento requerido y con la disponibilidad permanente para
-            procedimientos de urgencias o programados. Se encuentran ubicadas en el cuarto piso del edificio y disponen
-            de un grupo de especialistas con gran reconocimiento y aceptación en la región, por su profesionalismo,
-            idoneidad, humanismo y experiencia. En procedimientos programados es fortalecida la orientación al usuario
-            con un funcionario, encargado de realizar la programación e idóneamente reiterando la información
-            suministrada por el especialista en los cuidados pre y post-quirúrgicos. El área esta distribuida de la
-            siguiente manera:
+  <section class="surgery-section">
+    <div class="container">
+      <div class="surgery-intro">
+        <div class="intro-image">
+          <img src="/src/assets/cirugia.png" alt="Área de Cirugía" class="featured-image" loading="lazy" />
+        </div>
+        <div class="intro-content">
+          <h2 class="section-title">Centro Quirúrgico Especializado</h2>
+          <p class="section-text">
+            Nuestro pabellón quirúrgico, ubicado en el cuarto piso del edificio, cuenta con equipamiento de última
+            generación
+            y personal altamente capacitado para procedimientos de urgencia y programados. Destacamos por nuestro
+            enfoque humano
+            y profesional, brindando seguridad y confianza a cada paciente.
           </p>
-          <div class="row">
-            <div class="col-6">
-              <ul>
-                <li>Dos salas de cirugía</li>
-                <li>Sala de Partos</li>
-                <li>Esterilización</li>
-              </ul>
+
+          <div class="surgery-features">
+            <div class="feature-item">
+              <i class="fas fa-user-shield"></i>
+              <div>
+                <h4>Seguridad garantizada</h4>
+                <p>Protocolos estrictos y equipo especializado para tu protección</p>
+              </div>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Sala de recuperación</li>
-                <li>Área de Preparación del paciente</li>
-              </ul>
+
+            <div class="feature-item">
+              <i class="fas fa-procedures"></i>
+              <div>
+                <h4>Instalaciones modernas</h4>
+                <p>Salas equipadas con tecnología médica de punta</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <i class="fas fa-comments-medical"></i>
+              <div>
+                <h4>Acompañamiento integral</h4>
+                <p>Orientación pre y post operatoria por personal especializado</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Collage de imágenes estilizado con Cards -->
-    <div class="image-collage">
-      <div class="collage-card">
-        <img src="/src/assets/cirugia_inf.png" alt="Sala de Cirugía" class="collage-image" />
-        <div class="collage-content">
-          <h3>Sala de Cirugía</h3>
-          <p>Equipamiento avanzado para procedimientos de urgencias y programados.</p>
+      <div class="facilities-section">
+        <h3 class="facilities-title">Nuestras Instalaciones Quirúrgicas</h3>
+        <div class="facilities-grid">
+          <div class="facility-card">
+            <i class="fas fa-clinic-medical"></i>
+            <h4>Salas de Cirugía</h4>
+            <p>2 salas completamente equipadas para todo tipo de intervenciones</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-baby"></i>
+            <h4>Sala de Partos</h4>
+            <p>Área especializada para atención gineco-obstétrica</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-pump-medical"></i>
+            <h4>Esterilización</h4>
+            <p>Área de procesamiento central con los más altos estándares</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-bed"></i>
+            <h4>Sala de Recuperación</h4>
+            <p>Espacio confortable para monitoreo post-operatorio</p>
+          </div>
+          <div class="facility-card">
+            <i class="fas fa-user-injured"></i>
+            <h4>Preparación del Paciente</h4>
+            <p>Área dedicada a la preparación pre-quirúrgica</p>
+          </div>
         </div>
       </div>
-      <div class="collage-card">
-        <img src="/src/assets/cirugia_girardot.png" alt="Equipo de Cirugía" class="collage-image" />
-        <div class="collage-content">
-          <h3>Equipo de Cirugía</h3>
-          <p>Especialistas altamente capacitados en cada tipo de intervención quirúrgica.</p>
-        </div>
-      </div>
-      <div class="collage-card">
-        <img src="/src/assets/cirugia-general.jpg" alt="Tecnología de Cirugía" class="collage-image" />
-        <div class="collage-content">
-          <h3>Tecnología de Cirugía</h3>
-          <p>Las últimas innovaciones tecnológicas para una cirugía más precisa y segura.</p>
+
+      <div class="surgery-gallery">
+        <h3 class="gallery-title">Nuestro Trabajo</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="/src/assets/cirugia_inf.png" alt="Sala de Cirugía" class="gallery-image" />
+            <div class="gallery-overlay">
+              <h4>Sala de Cirugía</h4>
+              <p>Equipamiento avanzado para procedimientos de precisión</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/src/assets/cirugia_girardot.png" alt="Equipo Quirúrgico" class="gallery-image" />
+            <div class="gallery-overlay">
+              <h4>Equipo Quirúrgico</h4>
+              <p>Profesionales con amplia experiencia y reconocimiento</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/src/assets/cirugia-general.jpg" alt="Tecnología Avanzada" class="gallery-image" />
+            <div class="gallery-overlay">
+              <h4>Tecnología Avanzada</h4>
+              <p>Instrumental de última generación para tu seguridad</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,192 +123,378 @@ export default {
 </script>
 
 <style scoped>
-.cirugia-section {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
+/* Variables de color */
+:root {
+  --primary: #8b0000;
+  --primary-dark: #5a0000;
+  --secondary: #4169e1;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  background: url('/src/assets/surgery-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #333;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 51, 102);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  animation: fadeIn 2s ease;
+}
+
+/* Surgery Section */
+.surgery-section {
+  padding: 5rem 0;
+  background-color: var(--light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.surgery-intro {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+.intro-image {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.intro-image:hover .featured-image {
+  transform: scale(1.03);
+}
+
+.intro-content {
+  flex: 1;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #003366;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  margin-top: 1rem;
 }
 
-.info-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 0 120px;
-}
-
-
-.image-container {
-  flex: 1;
-  max-width: 50%;
-  padding: 20px;
-}
-
-.main-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-
-.content {
-  flex: 1;
-  text-align: left;
-  max-width: 50%;
-}
-
-
-.content p {
+.section-text {
   font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-}
-
-.specialties-list {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 1rem;
-  color: #666;
+  color: var(--gray);
+  margin-bottom: 2rem;
   line-height: 1.8;
 }
 
-.specialties-list li {
-  margin-bottom: 10px;
+.surgery-features {
+  display: grid;
+  gap: 1.5rem;
 }
 
-
-.image-collage {
+.feature-item {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
-.collage-card {
+.feature-item i {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-top: 0.3rem;
+}
+
+.feature-item h4 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+/* Facilities Section */
+.facilities-section {
+  margin: 5rem 0;
+}
+
+.facilities-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 3rem;
   position: relative;
-  width: 30%;
-  height: 300px;
-  border-radius: 12px;
+}
+
+.facilities-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--secondary);
+  margin: 1rem auto 0;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.facility-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.facility-card i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.facility-card h4 {
+  font-size: 1.3rem;
+  color: var(--dark);
+  margin-bottom: 0.8rem;
+}
+
+.facility-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* Gallery Section */
+.surgery-gallery {
+  margin: 5rem 0;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.gallery-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--secondary);
+  margin: 1rem auto 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 250px;
 }
 
-.collage-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.collage-image {
+.gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
-.collage-card:hover .collage-image {
+.gallery-item:hover .gallery-image {
   transform: scale(1.1);
 }
 
-.collage-content {
-  padding: 15px;
-  background-color: #fff;
+.gallery-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  background: rgba(0, 51, 102, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1.5rem;
   text-align: center;
 }
 
-.collage-content h3 {
-  font-size: 1.2rem;
-  color: #003366;
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
 }
 
-.collage-content p {
+.gallery-overlay h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.gallery-overlay p {
   font-size: 1rem;
-  color: #666;
 }
 
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-@media (max-width: 1420px) {
-  .info-container {
-    padding: 0 100px;
+  to {
+    opacity: 1;
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 992px) {
-  .info-container {
-    padding: 0 60px;
+  .hero-title {
+    font-size: 3rem;
   }
 
-  .image-container,
-  .content {
-    max-width: 50%;
+  .hero-subtitle {
+    font-size: 1.5rem;
   }
 
-  .main-image {
-    height: 640px;
-  }
-}
-
-@media (max-width: 1731px) {
-  .info-container {
-    padding: 0 60px;
+  .surgery-intro {
+    flex-direction: column;
   }
 
-  .image-container,
-  .content {
-    max-width: 50%;
+  .section-title {
+    font-size: 2.2rem;
   }
 
-  .main-image {
-    height: 640px;
+  .facilities-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .info-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 20px;
+  .hero-title {
+    font-size: 2.5rem;
   }
 
-  .main-image {
-    max-width: 100%;
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
     height: auto;
+    padding: 6rem 0;
   }
 
-  .content {
-    max-width: 100%;
-    margin-top: 20px;
+  .hero-title {
+    font-size: 2rem;
   }
 
-  .collage-card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .collage-image {
-    object-fit: cover;
+  .facilities-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

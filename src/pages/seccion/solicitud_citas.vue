@@ -37,9 +37,6 @@
                   </div>
                   <div class="col-sm-4 col-12 mt-1">
                     <div class="d-grid gap-2 d-md-flex">
-                      <button type="button" @click="buscarPaciente" class="btn btn-outline-primary me-md-2">
-                        <i class="icofont-search"></i> Buscar
-                      </button>
                       <button type="button" @click="mostrarFormulario" class="btn btn-primary">
                         <i class="icofont-arrow-right"></i> Continuar
                       </button>
@@ -472,42 +469,7 @@ export default {
     },
 
     // Método para buscar paciente
-    async buscarPaciente() {
-      if (!this.form.documentType || !this.form.document) {
-        alert('Por favor, seleccione el tipo e ingrese el número de documento.');
-        return;
-      }
-
-      try {
-        // Resetear campos antes de nueva búsqueda
-        this.resetFormFields();
-
-        const url = `http://127.0.0.1:8000/api/patient/buscar/${this.form.document}`;
-        const response = await axios.get(url);
-
-        if (!response.data) {
-          throw new Error('Paciente no encontrado');
-        }
-
-
-        this.form.firstName = response.data.firstName || '';
-        this.form.secondName = response.data.secondName || '';
-        this.form.firstLastName = response.data.firstLastName || '';
-        this.form.secondLastName = response.data.secondLastName || '';
-        this.form.birthday = response.data.birthday || '';
-        this.form.phone = response.data.phone || '';
-        this.form.gender = response.data.gender || '';
-        this.form.bloodGroup = response.data.bloodGroup || '';
-        this.form.rh = response.data.rh || ''
-
-        // Mostrar el formulario con los datos cargados
-        this.showForm = true;
-
-      } catch (error) {
-        console.error('Error al buscar el paciente:', error);
-        this.manejarErrorBusqueda(error);
-      }
-    },
+  
 
     // Método auxiliar para manejar errores
     manejarErrorBusqueda(error) {

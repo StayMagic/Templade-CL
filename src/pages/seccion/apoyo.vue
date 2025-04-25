@@ -1,76 +1,68 @@
 <template>
-   <header class="section-header">
-      <div class="header-content">
-        <h1 class="header-title">APOYO DIAGNOSTICO</h1>
-        <p class="header-description">Tecnología avanzada para un diagnóstico preciso y eficiente, brindando los mejores
-          resultados en las áreas de laboratorio, cardiología, radiología y más.</p>
+  <header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">APOYO DIAGNÓSTICO</h1>
+      <p class="hero-subtitle">Tecnología de vanguardia para resultados precisos y confiables</p>
+      <div class="hero-description">
+        <p>Ofrecemos diagnósticos avanzados en laboratorio clínico, cardiología, radiología y más, con equipos de última generación y profesionales altamente calificados.</p>
       </div>
-    </header>
-  <section class="apoyo-diagnostico-section">
-    <div class="info-container">
-      <div class="image-container">
-        <img src="/src/assets/radiologia.png" alt="Apoyo Diagnóstico" class="main-image" loading="lazy"/>
-      </div>
+    </div>
+  </header>
 
-      <div class="content">
-        <div class="blog-post pl-3 pr-3">
-          <p>
-            Suministramos diagnósticos acertados a través de nuestro Laboratorio Clínico que cuenta con química clínica,
-            hematología, coproanálisis, uroanálisis, y es complementado con laboratorios externos en las áreas de
-            microbiología, hormonas y patología. En cardiología realizamos pruebas no intervencionistas como
-            Ecocardiogramas, Holter, Pruebas de esfuerzo y Mapa Arterial. En Imagenología contamos con el equipamiento y
-            recurso humano para toma y lectura de:
+  <section class="services-section">
+    <div class="container">
+      <div class="service-intro">
+        <div class="intro-image">
+          <img src="/src/assets/radiologia.png" alt="Tecnología diagnóstica" class="featured-image" loading="lazy"/>
+        </div>
+        <div class="intro-content">
+          <h2 class="section-title">Excelencia en Diagnóstico Médico</h2>
+          <p class="section-text">
+            Nuestro centro proporciona diagnósticos precisos mediante un Laboratorio Clínico completo con análisis en química clínica, hematología, microbiología y patología. Complementamos con estudios cardiológicos no invasivos y tecnología de imagenología avanzada.
           </p>
-          <div class="row">
-            <div class="col-6">
-              <ul>
-                <li>Laboratorio clínico</li>
-                <li>Farmacia</li>
-                <li>Radiología convencional</li>
-              </ul>
+          <div class="service-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-flask"></i>
+              <span>Laboratorio clínico completo</span>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Ecografía</li>
-                <li>Cardiología No Invasiva</li>
-                <li>Ultrasonografía y Doppler no invasivo</li>
-              </ul>
+            <div class="highlight-item">
+              <i class="fas fa-heartbeat"></i>
+              <span>Cardiología no invasiva</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-x-ray"></i>
+              <span>Radiología digital</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-procedures"></i>
+              <span>Ultrasonografía especializada</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-
-    <div class="horizontal-cards-container">
-      <div class="card-horizontal">
-        <img src="/src/assets/x-rayos.png" alt="Rayos X" class="card-image" />
-        <div class="card-content">
-          <h3>Rayos X</h3>
-          <p>Utilizamos tecnología avanzada para diagnósticos mediante rayos X, asegurando una imagen clara y precisa.
-          </p>
-        </div>
       </div>
 
-      <div class="card-horizontal">
-        <img src="/src/assets/labora.jpg" alt="Laboratorio Clínico" class="card-image" />
-        <div class="card-content">
-          <h3>Laboratorio Clínico</h3>
-          <p>Realizamos diversos análisis de laboratorio para ofrecer diagnósticos completos y certeros.</p>
+      
+    <div class="gallery-section">
+        <h3 class="gallery-title">Nuestras Instalaciones</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="/src/assets/consulta_externa.png" alt="Consultorio" class="gallery-image"/>
+            <div class="gallery-caption">Consultorios equipados</div>
+          </div>
+          <div class="gallery-item">
+            <img src="/src/assets/consulta-exx.jpg" alt="Sala de espera" class="gallery-image"/>
+            <div class="gallery-caption">Áreas de espera confortables</div>
+          </div>
+          <div class="gallery-item">
+            <img src="/src/assets/externa.jpg" alt="Recepción" class="gallery-image"/>
+            <div class="gallery-caption">Recepción amigable</div>
+          </div>
         </div>
       </div>
-
-      <div class="card-horizontal">
-        <img src="/src/assets/apoyo.jpg" alt="Resultados" class="card-image" />
-        <div class="card-content">
-          <h3>Resultados</h3>
-          <p>Entregamos resultados detallados con la interpretación precisa de cada prueba realizada.</p>
-        </div>
-      </div>
-    </div>
   </section>
 </template>
-
 
 <script>
 export default {
@@ -79,205 +71,383 @@ export default {
 </script>
 
 <style scoped>
-.apoyo-diagnostico-section {
-  padding: 60px 20px;
-  background-color: #f4f4f9;
-  text-align: center;
-  color: #333;
+/* Variables de color */
+:root {
+  --primary: #0066cc;
+  --primary-dark: #004d99;
+  --secondary: #00b4d8;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
 }
 
-.section-header {
-  background-color: #003366;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.header-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.header-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.header-description {
-  font-size: 1rem;
-  font-weight: normal;
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  margin-bottom: 0;
+  color: var(--dark);
 }
 
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
-}
 
-.info-container {
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  background: url('/src/assets/medical-bg.jpg') center/cover no-repeat;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 35px 100px;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
 }
 
-.image-container {
-  flex: 1;
-  max-width: 50%;
-}
-
-.main-image {
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  background: #003366;
 }
 
-.content {
-  flex: 1;
-  text-align: left;
-  max-width: 50%;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
   padding: 0 20px;
 }
 
-.content p {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease;
 }
 
-.horizontal-cards-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+.hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease;
 }
 
-.card-horizontal {
+.hero-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  animation: fadeIn 2s ease;
+}
+
+/* Services Section */
+.services-section {
+  padding: 5rem 0;
+  background-color: var(--light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.service-intro {
   display: flex;
-  flex-direction: column;
-  width: 30%;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+.intro-image {
+  flex: 1;
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.card-horizontal:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.card-image {
+.featured-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 15px;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-.card-content {
-  padding: 15px;
+.intro-image:hover .featured-image {
+  transform: scale(1.03);
+}
+
+.intro-content {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2.5rem;
+
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  margin-top: 1rem;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.service-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.highlight-item i {
+  font-size: 1.3rem;
+  color: var(--secondary);
+}
+
+/* Service Cards */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
   text-align: center;
 }
 
-.card-content h3 {
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.service-card h3 {
   font-size: 1.5rem;
-  color: #003366;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
 }
 
-.card-content p {
+.service-card p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
   font-size: 1rem;
-  color: #666;
-  margin-top: 10px;
 }
 
+.card-link {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
 
-@media (max-width: 1200px) {
-  .info-container {
-    padding: 0 60px;
+.card-link:hover {
+  color: var(--primary);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
   }
-
-  .image-container,
-  .content {
-    flex-grow: 1;
-    flex-shrink: 1;
-    max-width: 50%;
-  }
-
-  .main-image {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-  }
-
-  .content {
-    max-width: 50%;
-    text-align: left;
-    padding: 0 20px;
-  }
-
-  .content p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.6;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* Responsive */
 @media (max-width: 992px) {
-  .info-container {
-    padding: 0 20px;
+  .hero-title {
+    font-size: 2.8rem;
   }
-
-  .main-image {
-    height: 500px;
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
   }
-
-  .horizontal-cards-container {
-    gap: 15px;
+  
+  .service-intro {
+    flex-direction: column;
+  }
+  
+  .intro-image, .intro-content {
+    flex: none;
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .info-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 20px;
+  .hero-title {
+    font-size: 2.2rem;
   }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .service-highlights {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+}
 
-  .main-image {
-    max-width: 100%;
+@media (max-width: 576px) {
+  .hero-section {
     height: auto;
+    padding: 6rem 0;
   }
-
-  .content {
-    max-width: 100%;
-    margin-top: 20px;
+  
+  .hero-title {
+    font-size: 2rem;
   }
+}
 
-  .horizontal-cards-container {
-    flex-direction: column;
+/* Estilos para la sección de galería */
+/* Gallery Section */
+.gallery-section {
+  margin: 5rem 0;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.gallery-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--secondary);
+  margin: 1rem auto 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 250px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #003366;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+/* Variables de color necesarias para que funcione */
+:root {
+  --primary: #218380;
+  --primary-dark: #1a6b68;
+  --secondary: #ffbc42;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .specialties-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+}
 
-  .card-horizontal {
-    width: 100%;
-    margin-bottom: 20px;
+@media (max-width: 768px) {
+  .specialties-title, .gallery-title {
+    font-size: 1.8rem;
   }
+}
 
-  .card-image {
-    height: 200px;
-  }
-
-  .card-content {
-    padding: 20px;
+@media (max-width: 576px) {
+  .specialties-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 </style>

@@ -91,10 +91,41 @@
       </div>
     </div>
 
+    
+  </div>
 
-    <div class="redirect-container">
-      <p>¿No encuentra lo que busca? <a href="/faq" class="redirect-link">Visite nuestra sección de preguntas
-          frecuentes</a></p>
+  <div class="col-12">
+    <div class="pqrs-card">
+      <div class="pqrs-header">
+        <i class="fas fa-comments"></i>
+        Peticiones, Quejas, Reclamos y Solicitudes (PQRS)
+      </div>
+      <div class="pqrs-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="inner-card">
+              <h5 class="card-title">
+                <i class="fas fa-question-circle"></i>
+                ¿Tienes alguna Petición, Queja, Reclamo o alguna Solicitud?
+              </h5>
+              <p class="card-text">
+                Valoramos su opinión y estamos comprometidos a mejorar constantemente nuestros servicios. 
+                Por favor realizar su PQRS al siguiente correo electrónico:
+                <a href="mailto:segl@clinicadeespecialistasgirardot.com" class="email-link">
+                  <i class="fas fa-envelope"></i> segl@clinicadeespecialistasgirardot.com
+                </a>
+                y la estaremos atendiendo lo más pronto posible.
+              </p>
+              <a href="mailto:segl@clinicadeespecialistasgirardot.com" class="contact-button">
+                <i class="fas fa-paper-plane"></i> Enviar PQRS
+              </a>
+              <p class="footer-text">
+                Muchas gracias por elegir los servicios de la Clínica De Especialistas Girardot. Su satisfacción es nuestra prioridad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -129,39 +160,50 @@ export default {
 </script>
 
 <style scoped>
+/* Variables de colores */
+:root {
+  --primary-color: #003366;
+  --primary-light: #e6eef5;
+  --accent-color: #0056b3;
+  --white: #ffffff;
+  --gray-100: #f9fafb;
+  --gray-200: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+}
+
+/* Estilos generales */
 .page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f9fafb;
+  background-color: var(--gray-100);
   padding: 2rem;
 }
 
-
-.section-title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.section-title h1 {
-  color: #2563eb;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.section-description {
-  font-size: 1rem;
-  color: #4b5563;
-  margin-top: 0.5rem;
-}
-
+/* Estilos del encabezado */
 .section-header {
   background-color: #003366;
   color: white;
   padding: 40px 217px;
   text-align: center;
+  width: 95%;
+  border-radius: 8px 8px 0 0;
 }
 
+.header-title {
+  font-size: 2.5rem;
+  color: white; 
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.header-description {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Estilos del formulario */
 .form-wrapper {
   display: flex;
   justify-content: space-between;
@@ -172,16 +214,14 @@ export default {
   flex-wrap: wrap;
 }
 
-
 .form-column {
   flex: 1;
-  background: #ffffff;
+  background: var(--white);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   min-width: 300px;
 }
-
 
 .form {
   display: flex;
@@ -202,60 +242,49 @@ export default {
 
 .form-label {
   font-weight: 500;
-  color: #374151;
+  color: var(--gray-700);
   margin-bottom: 0.5rem;
 }
 
 .form-input {
   padding: 1rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--gray-200);
   border-radius: 8px;
   font-size: 1rem;
-  color: #374151;
-  background: #ffffff;
+  color: var(--gray-700);
+  background: var(--white);
 }
 
 .form-input:focus {
   border-color: #003366;
   outline: none;
-  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.5);
 }
 
-
-.image-column {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.form-note {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin-top: 0.5rem;
 }
 
-.image {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.form-checkbox {
+  margin-right: 10px;
+  accent-color: #003366;
 }
 
-
-.redirect-container {
-  text-align: center;
-  margin-top: 2rem;
+.form-terms-label {
+  font-size: 0.95rem;
+  color: var(--gray-700);
 }
 
-.redirect-link {
+.form-link {
   color: #003366;
   text-decoration: underline;
-  font-weight: bold;
 }
-
-.redirect-link:hover {
-  color: #003366;
-}
-
 
 .form-button {
   background: #003366;
-  color: #ffffff;
+  color: var(--white);
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
@@ -269,8 +298,113 @@ export default {
   background: #084685;
 }
 
+/* Estilos de redirección */
+.redirect-container {
+  text-align: center;
+  margin-top: 2rem;
+}
 
+.redirect-link {
+  color: #003366;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.redirect-link:hover {
+  color: #084685;
+}
+
+/* Estilos del módulo PQRS */
+.pqrs-card {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.15);
+  border: none;
+  margin-top: 2rem;
+}
+
+.pqrs-header {
+  background-color: #003366;
+  color: white;
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.pqrs-header i {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.pqrs-body {
+  padding: 25px;
+  background-color: var(--white);
+}
+
+.inner-card {
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  border-radius: 6px;
+  padding: 20px;
+  background-color: #e6eef5;
+}
+
+.card-title {
+  color: #003366;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.card-text {
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.email-link {
+  color: #003366;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.email-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: var(--gray-600);
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* Estilos responsive */
 @media (max-width: 768px) {
+  .section-header {
+    padding: 30px 20px;
+  }
+  
   .form-wrapper {
     flex-direction: column;
     gap: 2rem;
@@ -282,6 +416,10 @@ export default {
 
   .form-group {
     grid-template-columns: 1fr;
+  }
+  
+  .header-title {
+    font-size: 2rem;
   }
 }
 </style>
